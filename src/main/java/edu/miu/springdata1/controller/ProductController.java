@@ -29,6 +29,7 @@ public class ProductController {
     @GetMapping
     public List<Product> getAll() {
         // call service
+        return null;
     }
 
     @GetMapping("/{id}")

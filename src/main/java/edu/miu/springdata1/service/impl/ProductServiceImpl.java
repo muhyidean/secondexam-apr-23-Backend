@@ -19,11 +19,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void delete(int id) {
-        productRepo.delete(id);
+        productRepo.deleteById(id);
     }
 
     @Override
     public Product getById(int id) {
-        return productRepo.getById(id);
+        return productRepo.findById(id).get();
     }
 }

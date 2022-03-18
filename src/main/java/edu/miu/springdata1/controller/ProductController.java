@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/products")
@@ -28,8 +27,7 @@ public class ProductController {
 
     @GetMapping
     public List<Product> getAll() {
-        // call service
-        return null;
+        return productService.getAll();
     }
 
     @GetMapping("/{id}")
@@ -37,7 +35,6 @@ public class ProductController {
         var product = productService.getById(id);
         return ResponseEntity.ok(product);
     }
-
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable int id) {
@@ -50,7 +47,12 @@ public class ProductController {
     }
 
     @GetMapping("/{id}/reviews")
-    public ResponseEntity<Review> getReviewsByProductId(@PathVariable int id) {
+    public List<Review> getReviewsByProductId(@PathVariable int id) {
+        return productService.getById(id).getReviews();
+    }
+
+    @GetMapping("/{id}/test")
+    public ResponseEntity test(@PathVariable int id) {
         // for demo purposes, this request is not authorized.
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(null);
     }

@@ -1,5 +1,7 @@
 package edu.miu.springdata1.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,12 +22,14 @@ public class Product {
     //@JoinColumn(name = "product_id")
 
     // UNCOMMENT FOR BI-DIRECTIONAL JOIN COLUMN
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Review> reviews;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     // CREATES FK IN PRODUCT TABLE
     @JoinColumn(name = "id_user")
+    @JsonBackReference
     private User user;
 
     @ManyToMany(mappedBy = "products")

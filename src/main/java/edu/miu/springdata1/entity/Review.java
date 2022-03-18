@@ -1,5 +1,6 @@
 package edu.miu.springdata1.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ public class Review {
     private int numberOfStars;
 
     @ManyToOne
+    @JsonBackReference
     private Product product;
 
 }

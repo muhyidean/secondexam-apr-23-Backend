@@ -17,17 +17,16 @@ public class Product {
     private String name;
     private float price;
 
-    //@OneToMany
-    // UNCOMMENT FOR UNI-DIRECTIONAL JOIN COLUMN
-    //@JoinColumn(name = "product_id")
+//    @OneToMany
+//     UNCOMMENT FOR UNI-DIRECTIONAL JOIN COLUMN
+//    @JoinColumn(name = "product_id")
 
     // UNCOMMENT FOR BI-DIRECTIONAL JOIN COLUMN
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product", fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<Review> reviews;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    // CREATES FK IN PRODUCT TABLE
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "id_user")
     @JsonBackReference
     private User user;

@@ -3,7 +3,9 @@ package edu.miu.springdata1.controller;
 
 import edu.miu.springdata1.entity.Product;
 import edu.miu.springdata1.entity.Review;
+import edu.miu.springdata1.repo.ProductRepo;
 import edu.miu.springdata1.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -57,4 +59,17 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(null);
     }
 
+    // FOR DEMO PURPOSES
+    @Autowired
+    ProductRepo productRepo;
+
+    @GetMapping("filter/price/{price}")
+    public List<Product> findPrice(@PathVariable("price") float price){
+        return productRepo.findByPriceGreaterThan(price);
+    }
+
+    @GetMapping("filter/review/{num}")
+    public List<Product> findPrice(@PathVariable("num") int num){
+        return productRepo.findProductWithReviews(num);
+    }
 }

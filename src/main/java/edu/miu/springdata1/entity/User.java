@@ -3,8 +3,11 @@ package edu.miu.springdata1.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -20,7 +23,8 @@ public class User {
     private String firstname;
     private String lastname;
 
-    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
     @JsonManagedReference
-    private Product product;
+    @Fetch(FetchMode.JOIN)
+    private List<Product> products;
 }

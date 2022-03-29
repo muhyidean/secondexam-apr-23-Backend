@@ -1,7 +1,9 @@
 package edu.miu.springdata1;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class SpringData1Application {
@@ -10,4 +12,6 @@ public class SpringData1Application {
         SpringApplication.run(SpringData1Application.class, args);
     }
 
+
+    ModelMapper modelMapper = new ModelMapper();
 }

@@ -1,4 +1,4 @@
-package edu.miu.springdata1.model;
+package edu.miu.springdata1.dto.input;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

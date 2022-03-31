@@ -1,14 +1,15 @@
 package edu.miu.springdata1.service.impl;
 
-import edu.miu.springdata1.entity.Product;
+import edu.miu.springdata1.dto.output.UserDto;
 import edu.miu.springdata1.entity.User;
-import edu.miu.springdata1.model.PagingRequest;
+import edu.miu.springdata1.dto.input.PagingRequest;
 import edu.miu.springdata1.repo.UserRepo;
 import edu.miu.springdata1.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,9 @@ import java.util.List;
 @RequiredArgsConstructor
 @Transactional
 public class UserServiceImpl implements UserService {
+
+    @Autowired
+    ModelMapper modelMapper;
 
     @PersistenceContext
     EntityManager entityManager;
@@ -49,8 +53,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserDto findByIdDto(int id){
+
+        return modelMapper.map(userRepo.findById(id),UserDto.class);
+    }
+    @Override
     public User findById(int id) {
-        return null ;
+        return userRepo.findById(id);
     }
 
 

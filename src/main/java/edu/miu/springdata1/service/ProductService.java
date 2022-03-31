@@ -1,7 +1,7 @@
 package edu.miu.springdata1.service;
 
 
-import edu.miu.springdata1.dto.ProductDto;
+import edu.miu.springdata1.dto.input.ProductDto;
 import edu.miu.springdata1.entity.Product;
 
 import java.util.List;

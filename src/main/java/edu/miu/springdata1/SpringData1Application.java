@@ -13,5 +13,8 @@ public class SpringData1Application {
     }
 
 
-    ModelMapper modelMapper = new ModelMapper();
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
 }

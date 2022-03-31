@@ -1,8 +1,8 @@
 package edu.miu.springdata1.controller;
 
 import edu.miu.springdata1.entity.User;
-import edu.miu.springdata1.entity.UserDto;
-import edu.miu.springdata1.model.PagingRequest;
+import edu.miu.springdata1.dto.output.UserDto;
+import edu.miu.springdata1.dto.input.PagingRequest;
 import edu.miu.springdata1.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -28,9 +28,14 @@ public class UserController {
         return userService.findAll();
     }
 
+    @GetMapping("/{id}/dto")
+    public UserDto getUserDto(@PathVariable("id") int id){
+        return userService.findByIdDto(id);
+    }
+
     @GetMapping("/{id}")
-    public UserDto getUser(@PathVariable("id") int id){
-        return null;
+    public User getUser(@PathVariable("id") int id){
+        return userService.findById(id);
     }
 
 }

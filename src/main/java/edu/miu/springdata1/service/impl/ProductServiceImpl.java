@@ -1,13 +1,12 @@
 package edu.miu.springdata1.service.impl;
 
-import edu.miu.springdata1.dto.ProductDto;
+import edu.miu.springdata1.dto.input.ProductDto;
 import edu.miu.springdata1.entity.Product;
-import edu.miu.springdata1.entity.User;
 import edu.miu.springdata1.repo.ProductRepo;
 import edu.miu.springdata1.repo.UserRepo;
 import edu.miu.springdata1.service.ProductService;
-import edu.miu.springdata1.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,11 +20,19 @@ import java.util.List;
 @Transactional
 public class ProductServiceImpl implements ProductService {
 
-    private final ProductRepo productRepo;
-    private final UserService userService;
+    @Autowired
+    ProductRepo productRepo;
+    @Autowired
+    UserRepo userRepo;
+
+    @PersistenceContext
+    EntityManager entityManager;
 
 //    @Override
-//    public void save(Product p) {
+//    public void save(ProductDto dto) {
+//        Product p = new Product();
+//        p.setName(dto.getName());
+//        p.setPrice(dto.getPrice());
 //        productRepo.save(p);
 //
 //    }
@@ -34,12 +41,12 @@ public class ProductServiceImpl implements ProductService {
         Product p = new Product();
         p.setName(dto.getName());
         p.setPrice(dto.getPrice());
-
-        var user = userService.findById(dto.getIdUser());
+        var user = userRepo.findById(dto.getIdUser());
         p.setUser(user);
-
         productRepo.save(p);
     }
+
+
 
     @Override
     public void delete(int id) {

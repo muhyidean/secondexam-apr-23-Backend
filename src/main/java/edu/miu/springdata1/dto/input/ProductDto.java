@@ -1,6 +1,5 @@
-package edu.miu.springdata1.dto;
+package edu.miu.springdata1.dto.input;
 
-import edu.miu.springdata1.entity.UserDto;
 import lombok.Data;
 
 @Data

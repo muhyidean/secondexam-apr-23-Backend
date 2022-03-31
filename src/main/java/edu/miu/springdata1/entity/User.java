@@ -16,6 +16,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "test",sequenceName = "product_id_seq")
     private int id;
 
     private String email;
@@ -25,6 +26,6 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
     @JsonManagedReference
-    @Fetch(FetchMode.JOIN)
+    @Fetch(FetchMode.SELECT)
     private List<Product> products;
 }

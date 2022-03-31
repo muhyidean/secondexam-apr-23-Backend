@@ -10,4 +10,7 @@ import java.util.List;
 public interface UserRepo extends PagingAndSortingRepository<User,Integer> {
 
     List<User> findAll();
+
+    User findById(int id);
+
 }

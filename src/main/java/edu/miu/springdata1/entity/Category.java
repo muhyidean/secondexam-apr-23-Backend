@@ -15,6 +15,6 @@ public class Category {
 
     private String name;
 
-    @ManyToMany
-    private List<Product> products;
+//    @ManyToMany
+//    private List<Product> products;
 }

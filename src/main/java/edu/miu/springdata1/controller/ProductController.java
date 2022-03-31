@@ -1,7 +1,7 @@
 package edu.miu.springdata1.controller;
 
 
-import edu.miu.springdata1.dto.ProductDto;
+import edu.miu.springdata1.dto.input.ProductDto;
 import edu.miu.springdata1.entity.Product;
 import edu.miu.springdata1.entity.Review;
 import edu.miu.springdata1.repo.ProductRepo;

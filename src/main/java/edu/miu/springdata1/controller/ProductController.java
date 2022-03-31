@@ -1,6 +1,7 @@
 package edu.miu.springdata1.controller;
 
 
+import edu.miu.springdata1.dto.ProductDto;
 import edu.miu.springdata1.entity.Product;
 import edu.miu.springdata1.entity.Review;
 import edu.miu.springdata1.repo.ProductRepo;
@@ -21,9 +22,15 @@ public class ProductController {
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
+//
+//    @PostMapping
+//    public void save(@RequestBody Product p) {
+//        productService.save(p);
+//    }
+
 
     @PostMapping
-    public void save(@RequestBody Product p) {
+    public void save(@RequestBody ProductDto p) {
         productService.save(p);
     }
 

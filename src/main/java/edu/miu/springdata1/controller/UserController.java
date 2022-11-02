@@ -22,7 +22,6 @@ public class UserController {
         return userService.paging(pagingRequest);
     }
 
-
     @GetMapping
     public List<User> getUsers(){
         return userService.findAll();
@@ -36,6 +35,11 @@ public class UserController {
     @GetMapping("/{id}")
     public User getUser(@PathVariable("id") int id){
         return userService.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable("id") int id){
+       userService.deleteById(id);
     }
 
 }

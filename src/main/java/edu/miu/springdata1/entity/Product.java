@@ -25,7 +25,7 @@ public class Product {
 //    @JoinColumn(name = "product_id")
 
     // UNCOMMENT FOR BI-DIRECTIONAL JOIN COLUMN
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product", fetch = FetchType.LAZY)
+    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JsonManagedReference
     @Fetch(FetchMode.SELECT)
     @BatchSize(size = 10)

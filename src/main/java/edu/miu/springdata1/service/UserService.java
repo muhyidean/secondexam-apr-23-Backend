@@ -15,4 +15,6 @@ public interface UserService {
     User findById(int id);
 
     UserDto findByIdDto(int id);
+
+    void deleteById(int id);
 }

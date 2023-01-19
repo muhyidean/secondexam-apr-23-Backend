@@ -25,10 +25,9 @@ public class Product {
 //    @JoinColumn(name = "product_id")
 
     // UNCOMMENT FOR BI-DIRECTIONAL JOIN COLUMN
-    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    @JsonManagedReference
-    @Fetch(FetchMode.SELECT)
-    @BatchSize(size = 10)
+    @OneToMany()
+    @JoinColumn(name = "product_id")
+
     private List<Review> reviews;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

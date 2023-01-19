@@ -28,7 +28,31 @@ INSERT INTO product (id, name, price, id_user)
 VALUES (112, 'iPad', 900, 111);
 
 INSERT INTO product (id, name, price, id_user)
-VALUES (113, 'Pen', 5, 112);
+VALUES (113, 'Speakers', 100, 111);
+
+INSERT INTO product (id, name, price, id_user)
+VALUES (114, 'SD Card', 50, 111);
+
+INSERT INTO product (id, name, price, id_user)
+VALUES (115, 'Fridge', 1500, 111);
+
+INSERT INTO product (id, name, price, id_user)
+VALUES (116, 'Smart TV', 1800, 111);
+
+INSERT INTO product (id, name, price, id_user)
+VALUES (117, 'MacBook', 1800, 111);
+
+INSERT INTO product (id, name, price, id_user)
+VALUES (118, 'Smart Watch', 320, 111);
+
+INSERT INTO product (id, name, price, id_user)
+VALUES (119, 'MacBook Air', 800, 111);
+
+INSERT INTO product (id, name, price, id_user)
+VALUES (120, 'iPad Pro', 1200, 111);
+
+INSERT INTO product (id, name, price, id_user)
+VALUES (121, 'Pen', 5, 112);
 
 -- REVIEWS
 
@@ -39,4 +63,53 @@ INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
 VALUES (2,'amazing phone',5,111);
 
 INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
-VALUES (3,'awesome tablet',5,112);
+VALUES (3,'awesome phone',5,111);
+
+INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
+VALUES (4,'amazing phone',5,111);
+
+INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
+VALUES (5,'awesome phone',5,111);
+
+INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
+VALUES (6,'amazing phone',5,111);
+
+INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
+VALUES (7,'awesome phone',5,111);
+
+INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
+VALUES (8,'amazing phone',5,111);
+
+INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
+VALUES (9,'awesome phone',5,111);
+
+INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
+VALUES (10,'amazing phone',5,111);
+
+
+INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
+VALUES (11,'awesome tablet',5,112);
+
+
+-- INSERT INTO PRODUCT_REVIEWS (product_id , reviews_id)
+-- VALUES (111,1);
+-- INSERT INTO PRODUCT_REVIEWS (product_id , reviews_id)
+-- VALUES (111,2);
+-- INSERT INTO PRODUCT_REVIEWS (product_id , reviews_id)
+-- VALUES (111,3);
+-- INSERT INTO PRODUCT_REVIEWS (product_id , reviews_id)
+-- VALUES (111,4);
+-- INSERT INTO PRODUCT_REVIEWS (product_id , reviews_id)
+-- VALUES (111,5);
+-- INSERT INTO PRODUCT_REVIEWS (product_id , reviews_id)
+-- VALUES (111,6);
+-- INSERT INTO PRODUCT_REVIEWS (product_id , reviews_id)
+-- VALUES (111,7);
+-- INSERT INTO PRODUCT_REVIEWS (product_id , reviews_id)
+-- VALUES (111,8);
+-- INSERT INTO PRODUCT_REVIEWS (product_id , reviews_id)
+-- VALUES (111,9);
+-- INSERT INTO PRODUCT_REVIEWS (product_id , reviews_id)
+-- VALUES (111,10);
+-- INSERT INTO PRODUCT_REVIEWS (product_id , reviews_id)
+-- VALUES (112,11);

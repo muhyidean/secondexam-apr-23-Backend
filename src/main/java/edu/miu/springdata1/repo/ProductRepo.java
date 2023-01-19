@@ -12,9 +12,22 @@ import java.util.List;
 public interface ProductRepo extends CrudRepository<Product,Integer> {
 
 
+    List<Product> findAll();
+
+
 
     public List<Product> findByPriceGreaterThan(float price);
 
+//    @Query(value = "SELECT * FROM POST WHERE AUTHOR = :author", nativeQuery = true)
+//    public List<Post> findByAuthor(@Param("author") String author);
+
+
     @Query( "select p from Product p where p.reviews.size >= :num" )
     public List<Product> findProductWithReviews(int num);
+
+    public List<Product> findProductByName(String name);
+
+
+
+
 }

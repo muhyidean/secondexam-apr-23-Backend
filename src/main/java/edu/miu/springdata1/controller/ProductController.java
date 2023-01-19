@@ -2,9 +2,11 @@ package edu.miu.springdata1.controller;
 
 
 import edu.miu.springdata1.dto.input.ProductDto;
+import edu.miu.springdata1.dto.output.ProductSimpleDto;
 import edu.miu.springdata1.entity.Product;
 import edu.miu.springdata1.entity.Review;
 import edu.miu.springdata1.repo.ProductRepo;
+import edu.miu.springdata1.repo.ReviewSearchDao;
 import edu.miu.springdata1.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -75,8 +77,38 @@ public class ProductController {
         return productRepo.findByPriceGreaterThan(price);
     }
 
+
     @GetMapping("filter/review/{num}")
     public List<Product> findPrice(@PathVariable("num") int num){
         return productRepo.findProductWithReviews(num);
     }
+
+
+    @GetMapping("/test")
+    public ProductSimpleDto test(){
+        return productService.test();
+    }
+
+    @GetMapping("/test2")
+    public ProductSimpleDto testLazyObject(){
+        var p = productService.testLazyObject();
+        ProductSimpleDto dto = new ProductSimpleDto();
+        dto.setName(p.getName());
+        dto.setPrice(p.getPrice());
+        System.out.println(p.getReviews().get(0).getComment());
+        return dto;
+    }
+
+    @GetMapping("filter/{name}")
+    public List<Product> findByName(@PathVariable("name") String name){
+        return productRepo.findProductByName(name);
+    }
+
+    // JUST FOR DEMO PURPOSES
+    @Autowired
+    ReviewSearchDao reviewSearchDao;
+    @GetMapping("/reviews") public List<Review> searchReviews(@RequestBody Review review){
+        return reviewSearchDao.findAllByCriteria(review);
+    }
+
 }

@@ -24,7 +24,7 @@ public class User {
     private String firstname;
     private String lastname;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY) // , fetch = FetchType.LAZY
     @JsonManagedReference
     @Fetch(FetchMode.SELECT)
     private List<Product> products;

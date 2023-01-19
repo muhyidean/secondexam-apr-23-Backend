@@ -11,9 +11,9 @@ public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String comment;
-    private int numberOfStars;
+    private Integer numberOfStars;
 
     @ManyToOne
     @JsonBackReference

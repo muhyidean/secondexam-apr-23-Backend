@@ -62,11 +62,11 @@ public class ProductController {
         return productService.getById(id).getReviews();
     }
 
-    @GetMapping("/{id}/test")
-    public ResponseEntity test(@PathVariable int id) {
-        // for demo purposes, this request is not authorized.
-        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(null);
-    }
+//    @GetMapping("/{id}/test")
+//    public ResponseEntity test(@PathVariable int id) {
+//        // for demo purposes, this request is not authorized.
+//        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(null);
+//    }
 
     // FOR DEMO PURPOSES
     @Autowired
@@ -84,9 +84,9 @@ public class ProductController {
     }
 
 
-    @GetMapping("/test")
-    public ProductSimpleDto test(){
-        return productService.test();
+    @GetMapping("/{id}/dto")
+    public ProductSimpleDto findDto(@PathVariable int id){
+        return productService.findDto(id);
     }
 
     @GetMapping("/test2")
@@ -104,11 +104,12 @@ public class ProductController {
         return productRepo.findProductByName(name);
     }
 
-    // JUST FOR DEMO PURPOSES
-    @Autowired
-    ReviewSearchDao reviewSearchDao;
-    @GetMapping("/reviews") public List<Review> searchReviews(@RequestBody Review review){
-        return reviewSearchDao.findAllByCriteria(review);
+    // JUST FOR DEMO PURPOSES ! ;)
+    @GetMapping("filter/reviews")
+    public List<Review> searchReviews(
+            @RequestParam(value = "comment", required = false) String comment,
+            @RequestParam(value = "stars",required = false) Integer stars){
+        return productService.searchReviewCriteria(comment,stars);
     }
 
 }

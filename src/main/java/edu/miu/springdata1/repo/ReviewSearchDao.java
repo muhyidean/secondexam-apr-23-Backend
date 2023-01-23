@@ -1,6 +1,7 @@
 package edu.miu.springdata1.repo;
 
 
+import edu.miu.springdata1.dto.input.ReviewCriteriaRequest;
 import edu.miu.springdata1.entity.Review;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -21,7 +22,8 @@ public class ReviewSearchDao {
 
     private final EntityManager em;
 
-    public List<Review> findAllBySimpleQuery(int id, String comment, int numberOfStars) {
+    //FIXME This method is not working properly use the second one.
+    public List<Review> findAllBySimpleQuery(String comment, int numberOfStars) {
         CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
         CriteriaQuery<Review> criteriaQuery = criteriaBuilder.createQuery(Review.class);
 
@@ -43,19 +45,19 @@ public class ReviewSearchDao {
         return query.getResultList();
     }
 
-    public List<Review> findAllByCriteria(Review review){ // You can make a search request object for the input
+    public List<Review> findAllByCriteria(ReviewCriteriaRequest reviewCriteriaRequest){ // You can make a search request object for the input
         CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
         CriteriaQuery<Review> criteriaQuery = criteriaBuilder.createQuery(Review.class);
         List<Predicate> predicates = new ArrayList<>();
 
-        // select from Review
+        // select * from Review
         Root<Review> root = criteriaQuery.from(Review.class);
-        if(review.getComment()!=null){
-            Predicate commentPredicate = criteriaBuilder.like(root.get("comment"),"%" + review.getComment() + "%");
+        if(reviewCriteriaRequest.getComment()!=null){
+            Predicate commentPredicate = criteriaBuilder.like(root.get("comment"),"%" + reviewCriteriaRequest.getComment() + "%");
             predicates.add(commentPredicate);
         }
-        if(review.getNumberOfStars()!=null){
-            Predicate starPredicate = criteriaBuilder.equal(root.get("numberOfStars"),review.getNumberOfStars());
+        if(reviewCriteriaRequest.getNumberOfStars()!=null){
+            Predicate starPredicate = criteriaBuilder.equal(root.get("numberOfStars"),reviewCriteriaRequest.getNumberOfStars());
             predicates.add(starPredicate);
         }
         criteriaQuery.where(

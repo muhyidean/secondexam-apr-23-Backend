@@ -3,6 +3,7 @@ package edu.miu.springdata1.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -24,8 +25,9 @@ public class User {
     private String firstname;
     private String lastname;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY) // , fetch = FetchType.LAZY
+    @OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY) // , fetch = FetchType.LAZY
     @JsonManagedReference
     @Fetch(FetchMode.SELECT)
+    @JoinColumn(name = "id_user")
     private List<Product> products;
 }

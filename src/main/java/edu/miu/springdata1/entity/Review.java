@@ -15,8 +15,6 @@ public class Review {
     private String comment;
     private Integer numberOfStars;
 
-    @ManyToOne
-    @JsonBackReference
-    private Product product;
+
 
 }

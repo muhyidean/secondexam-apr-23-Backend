@@ -1,10 +1,12 @@
 package edu.miu.springdata1.service.impl;
 
 import edu.miu.springdata1.dto.input.ProductDto;
+import edu.miu.springdata1.dto.input.ReviewCriteriaRequest;
 import edu.miu.springdata1.dto.output.ProductSimpleDto;
 import edu.miu.springdata1.entity.Product;
 import edu.miu.springdata1.entity.Review;
 import edu.miu.springdata1.repo.ProductRepo;
+import edu.miu.springdata1.repo.ReviewSearchDao;
 import edu.miu.springdata1.repo.UserRepo;
 import edu.miu.springdata1.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +21,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
+
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
@@ -39,6 +41,7 @@ public class ProductServiceImpl implements ProductService {
 //
 //    }
 
+    @Transactional
     public void save(ProductDto dto){
         Product p = new Product();
         p.setName(dto.getName());
@@ -58,6 +61,12 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getById(int id) {
+//        var p = entityManager.find(Product.class, id);
+//        // Open transactional manually
+//        entityManager.remove(p);
+//        // close transaction
+//        System.out.println("DDD" + p.getReviews());
+//        return null;
         return productRepo.findById(id).get();
     }
 
@@ -69,9 +78,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductSimpleDto test(){
+    public ProductSimpleDto findDto(int id){
         var p = entityManager.find(Product.class,111);
-
         ProductSimpleDto dto = new ProductSimpleDto();
         dto.setName(p.getName());
         dto.setPrice(p.getPrice());
@@ -83,4 +91,18 @@ public class ProductServiceImpl implements ProductService {
         var p = entityManager.find(Product.class,111);
         return p;
     }
+
+
+
+    @Autowired
+    ReviewSearchDao reviewSearchDao;
+    @Override
+    public List<Review> searchReviewCriteria(String comment, Integer stars) {
+        var dtoRequest = new ReviewCriteriaRequest(comment,stars);
+        return reviewSearchDao.findAllByCriteria(dtoRequest);
+
+//        return reviewSearchDao.findAllBySimpleQuery(comment,stars);
+    }
+
+
 }

@@ -66,19 +66,19 @@ INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
 VALUES (3,'awesome phone',5,111);
 
 INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
-VALUES (4,'amazing phone',5,111);
+VALUES (4,'amazing phone',4,111);
 
 INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
-VALUES (5,'awesome phone',5,111);
+VALUES (5,'awesome phone',4,111);
 
 INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
-VALUES (6,'amazing phone',5,111);
+VALUES (6,'amazing phone',3,111);
 
 INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
 VALUES (7,'awesome phone',5,111);
 
 INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
-VALUES (8,'amazing phone',5,111);
+VALUES (8,'amazing phone',4,111);
 
 INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
 VALUES (9,'awesome phone',5,111);

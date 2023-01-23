@@ -2,6 +2,7 @@ package edu.miu.springdata1.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Fetch;
@@ -25,13 +26,14 @@ public class Product {
 //    @JoinColumn(name = "product_id")
 
     // UNCOMMENT FOR BI-DIRECTIONAL JOIN COLUMN
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @Fetch(FetchMode.SUBSELECT)
+    @JsonManagedReference
     @JoinColumn(name = "product_id")
-
+//    @BatchSize(size = 6)
     private List<Review> reviews;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_user")
+    @ManyToOne( fetch = FetchType.LAZY)
     @JsonBackReference
     private User user;
 

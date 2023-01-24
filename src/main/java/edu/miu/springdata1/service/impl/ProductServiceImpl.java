@@ -97,8 +97,11 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     ReviewSearchDao reviewSearchDao;
     @Override
-    public List<Review> searchReviewCriteria(String comment, Integer stars) {
-        var dtoRequest = new ReviewCriteriaRequest(comment,stars);
+    public List<Review> searchReviewCriteria(String comment, Integer stars,Integer pId) {
+        var dtoRequest = new ReviewCriteriaRequest(); //
+        dtoRequest.setComment(comment);
+        dtoRequest.setNumberOfStars(stars);
+        dtoRequest.setProductId(pId);
         return reviewSearchDao.findAllByCriteria(dtoRequest);
 
 //        return reviewSearchDao.findAllBySimpleQuery(comment,stars);

@@ -11,4 +11,5 @@ public class ReviewCriteriaRequest {
 
     private String comment;
     private Integer numberOfStars;
+    private Integer productId;
 }

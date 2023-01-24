@@ -23,7 +23,7 @@ public interface ProductService {
 
     Product testLazyObject();
 
-    List<Review> searchReviewCriteria(String comment, Integer stars);
+    List<Review> searchReviewCriteria(String comment, Integer stars, Integer pId);
 
 
 

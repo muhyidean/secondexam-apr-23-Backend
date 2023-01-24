@@ -52,6 +52,8 @@ public class ReviewSearchDao {
 
         // select * from Review
         Root<Review> root = criteriaQuery.from(Review.class);
+        Predicate productPredicate = criteriaBuilder.equal(root.get("product"), reviewCriteriaRequest.getProductId());
+        predicates.add(productPredicate);
         if(reviewCriteriaRequest.getComment()!=null){
             Predicate commentPredicate = criteriaBuilder.like(root.get("comment"),"%" + reviewCriteriaRequest.getComment() + "%");
             predicates.add(commentPredicate);
@@ -61,7 +63,7 @@ public class ReviewSearchDao {
             predicates.add(starPredicate);
         }
         criteriaQuery.where(
-                criteriaBuilder.or(predicates.toArray(new Predicate[0]))
+                criteriaBuilder.and(predicates.toArray(new Predicate[0]))
         );
 
         TypedQuery<Review> query = em.createQuery(criteriaQuery);

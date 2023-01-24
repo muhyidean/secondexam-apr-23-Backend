@@ -104,12 +104,12 @@ public class ProductController {
         return productRepo.findProductByName(name);
     }
 
-    // JUST FOR DEMO PURPOSES ! ;)
-    @GetMapping("filter/reviews")
+    @GetMapping("/{id}/reviews/filter")
     public List<Review> searchReviews(
+            @PathVariable("id")Integer id,
             @RequestParam(value = "comment", required = false) String comment,
             @RequestParam(value = "stars",required = false) Integer stars){
-        return productService.searchReviewCriteria(comment,stars);
+        return productService.searchReviewCriteria(comment,stars,id);
     }
 
 }

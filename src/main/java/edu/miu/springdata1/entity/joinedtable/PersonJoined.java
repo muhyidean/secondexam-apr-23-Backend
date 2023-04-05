@@ -2,7 +2,7 @@ package edu.miu.springdata1.entity.joinedtable;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Data

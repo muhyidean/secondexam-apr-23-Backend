@@ -3,16 +3,14 @@ package edu.miu.springdata1.repo;
 
 import edu.miu.springdata1.dto.input.ReviewCriteriaRequest;
 import edu.miu.springdata1.entity.Review;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,8 +50,10 @@ public class ReviewSearchDao {
 
         // select * from Review
         Root<Review> root = criteriaQuery.from(Review.class);
+
         Predicate productPredicate = criteriaBuilder.equal(root.get("product"), reviewCriteriaRequest.getProductId());
         predicates.add(productPredicate);
+
         if(reviewCriteriaRequest.getComment()!=null){
             Predicate commentPredicate = criteriaBuilder.like(root.get("comment"),"%" + reviewCriteriaRequest.getComment() + "%");
             predicates.add(commentPredicate);

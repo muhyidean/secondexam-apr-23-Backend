@@ -5,6 +5,7 @@ import edu.miu.springdata1.entity.User;
 import edu.miu.springdata1.dto.input.PagingRequest;
 import edu.miu.springdata1.repo.UserRepo;
 import edu.miu.springdata1.service.UserService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
+import jakarta.persistence.*;
 import java.util.List;
 
 @Service
@@ -42,8 +41,6 @@ public class UserServiceImpl implements UserService {
 
         var request = PageRequest
                 .of(pagingRequest.getPage(), pagingRequest.getPageSize(), direction,pagingRequest.getSortBy());
-
-
         return userRepo.findAll(request);
     }
 

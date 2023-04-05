@@ -2,14 +2,13 @@ package edu.miu.springdata1.entity.tableperclass;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.*;
 
-@Entity
-@Data
-public class FacultyTablePerClass extends PersonTablePerClass {
-
-    private int salary;
-    private String department;
-
-}
+//@Entity
+//@Data
+//public class FacultyTablePerClass extends PersonTablePerClass {
+//
+//    private int salary;
+//    private String department;
+//
+//}

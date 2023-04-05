@@ -13,4 +13,6 @@ public interface UserRepo extends PagingAndSortingRepository<User,Integer> {
 
     User findById(int id);
 
+    void deleteById(int id);
+
 }

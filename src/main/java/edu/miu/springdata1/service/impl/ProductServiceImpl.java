@@ -14,8 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,7 +55,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void delete(int id) {
-
         productRepo.deleteById(id);
     }
 

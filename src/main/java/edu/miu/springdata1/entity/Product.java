@@ -1,6 +1,7 @@
 package edu.miu.springdata1.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -27,10 +28,10 @@ public class Product {
 
     // UNCOMMENT FOR BI-DIRECTIONAL JOIN COLUMN
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @Fetch(FetchMode.SUBSELECT)
+    @Fetch(FetchMode.SELECT)
     @JsonManagedReference
     @JoinColumn(name = "product_id")
-//    @BatchSize(size = 6)
+    @BatchSize(size = 5)
     private List<Review> reviews;
 
     @ManyToOne( fetch = FetchType.LAZY)

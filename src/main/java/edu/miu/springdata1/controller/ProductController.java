@@ -89,15 +89,6 @@ public class ProductController {
         return productService.findDto(id);
     }
 
-    @GetMapping("/test2")
-    public ProductSimpleDto testLazyObject(){
-        var p = productService.testLazyObject();
-        ProductSimpleDto dto = new ProductSimpleDto();
-        dto.setName(p.getName());
-        dto.setPrice(p.getPrice());
-        System.out.println(p.getReviews().get(0).getComment());
-        return dto;
-    }
 
     @GetMapping("filter/{name}")
     public List<Product> findByName(@PathVariable("name") String name){

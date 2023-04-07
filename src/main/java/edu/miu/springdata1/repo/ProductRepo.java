@@ -12,7 +12,6 @@ import java.util.List;
 public interface ProductRepo extends CrudRepository<Product,Integer> {
 
 
-    List<Product> findAll();
 
 
     public List<Product> findByPriceGreaterThan(float price);
@@ -22,7 +21,7 @@ public interface ProductRepo extends CrudRepository<Product,Integer> {
 
 
     @Query( "select p from Product p where count(p.reviews) >= :num" )
-    public List<Product> findProductWithReviews(int num);
+    public List<Product> findProductWithReviews(int num); // 10
 
     public List<Product> findProductByName(String name);
 

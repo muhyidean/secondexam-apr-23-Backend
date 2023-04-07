@@ -11,6 +11,7 @@ import edu.miu.springdata1.repo.UserRepo;
 import edu.miu.springdata1.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,7 +22,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-
+@Transactional
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
@@ -32,16 +33,7 @@ public class ProductServiceImpl implements ProductService {
     @PersistenceContext
     EntityManager entityManager;
 
-//    @Override
-//    public void save(ProductDto dto) {
-//        Product p = new Product();
-//        p.setName(dto.getName());
-//        p.setPrice(dto.getPrice());
-//        productRepo.save(p);
-//
-//    }
-
-    @Transactional
+    @Override
     public void save(ProductDto dto){
         Product p = new Product();
         p.setName(dto.getName());
@@ -51,8 +43,6 @@ public class ProductServiceImpl implements ProductService {
         productRepo.save(p);
     }
 
-
-
     @Override
     public void delete(int id) {
         productRepo.deleteById(id);
@@ -60,20 +50,14 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getById(int id) {
-//        var p = entityManager.find(Product.class, id);
-//        // Open transactional manually
-//        entityManager.remove(p);
-//        // close transaction
-//        System.out.println("DDD" + p.getReviews());
-//        return null;
         return productRepo.findById(id).get();
     }
 
     @Override
     public List<Product> getAll() {
-        var result= new ArrayList<Product>();
-        productRepo.findAll().forEach(result::add);
-        return result;
+        Iterable<Product> iterable = productRepo.findAll();
+        List<Product> list = Streamable.of(iterable).toList();
+        return list;
     }
 
     @Override
@@ -85,13 +69,12 @@ public class ProductServiceImpl implements ProductService {
         return dto;
     }
 
+
     @Override
     public Product testLazyObject(){
         var p = entityManager.find(Product.class,111);
         return p;
     }
-
-
 
     @Autowired
     ReviewSearchDao reviewSearchDao;

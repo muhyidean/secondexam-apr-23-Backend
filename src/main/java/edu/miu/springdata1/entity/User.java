@@ -25,9 +25,9 @@ public class User {
     private String firstname;
     private String lastname;
 
-    @OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY) // , fetch = FetchType.LAZY
+    @OneToMany( cascade = CascadeType.PERSIST, fetch = FetchType.LAZY) // , fetch = FetchType.LAZY
     @JsonManagedReference
     @Fetch(FetchMode.SELECT)
-    @JoinColumn(name = "id_user")
+    @JoinColumn(name = "user_id")
     private List<Product> products;
 }

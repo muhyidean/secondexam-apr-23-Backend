@@ -21,37 +21,37 @@ VALUES (116, 'tina@miu.edu', 'tina', 'xing', '$2a$12$IKEQb00u5QpZMx4v5zMweu.3wrq
 
 -- PRODUCTS
 
-INSERT INTO product (id, name, price, id_user)
+INSERT INTO product (id, name, price, user_id)
 VALUES (111, 'iPhone', 1200, 111);
 
-INSERT INTO product (id, name, price, id_user)
+INSERT INTO product (id, name, price, user_id)
 VALUES (112, 'iPad', 900, 111);
 
-INSERT INTO product (id, name, price, id_user)
+INSERT INTO product (id, name, price, user_id)
 VALUES (113, 'Speakers', 100, 111);
 
-INSERT INTO product (id, name, price, id_user)
+INSERT INTO product (id, name, price, user_id)
 VALUES (114, 'SD Card', 50, 111);
 
-INSERT INTO product (id, name, price, id_user)
+INSERT INTO product (id, name, price, user_id)
 VALUES (115, 'Fridge', 1500, 111);
 
-INSERT INTO product (id, name, price, id_user)
+INSERT INTO product (id, name, price, user_id)
 VALUES (116, 'Smart TV', 1800, 111);
 
-INSERT INTO product (id, name, price, id_user)
+INSERT INTO product (id, name, price, user_id)
 VALUES (117, 'MacBook', 1800, 111);
 
-INSERT INTO product (id, name, price, id_user)
+INSERT INTO product (id, name, price, user_id)
 VALUES (118, 'Smart Watch', 320, 111);
 
-INSERT INTO product (id, name, price, id_user)
+INSERT INTO product (id, name, price, user_id)
 VALUES (119, 'MacBook Air', 800, 111);
 
-INSERT INTO product (id, name, price, id_user)
+INSERT INTO product (id, name, price, user_id)
 VALUES (120, 'iPad Pro', 1200, 111);
 
-INSERT INTO product (id, name, price, id_user)
+INSERT INTO product (id, name, price, user_id)
 VALUES (121, 'Pen', 5, 112);
 
 -- REVIEWS
@@ -60,13 +60,13 @@ INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
 VALUES (1,'awesome phone',5,111);
 
 INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
-VALUES (2,'amazing phone',5,111);
+VALUES (2,'awesome !',5,111);
 
 INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
-VALUES (3,'awesome phone',5,111);
+VALUES (3,'it sucks',5,111);
 
 INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
-VALUES (4,'amazing phone',4,111);
+VALUES (4,'its great',4,111);
 
 INSERT INTO REVIEW (id,comment,number_of_stars,product_id)
 VALUES (5,'awesome phone',4,111);

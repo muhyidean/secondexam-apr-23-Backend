@@ -11,8 +11,6 @@ public class SpringData1Application {
     public static void main(String[] args) {
         SpringApplication.run(SpringData1Application.class, args);
     }
-
-
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();

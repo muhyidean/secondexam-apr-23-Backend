@@ -4,38 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99bc903c-43a2-4d93-8ee3-e31d1dc4994c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/repo/BookCriteriaSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/controller/ProductController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/dto/input/ReviewCriteriaRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/dto/input/BookCriteriaRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/dto/output/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/dto/output/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/Review.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/joinedtable/FacultyJoined.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/joinedtable/PersonJoined.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/joinedtable/StudentJoined.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/singletable/Faculty.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/singletable/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/singletable/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/tableperclass/FacultyTablePerClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/tableperclass/PersonTablePerClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/entity/tableperclass/StudentTablePerClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/repo/ProductRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/repo/ReviewSearchDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/repo/UserRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/service/ProductService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/service/impl/ProductServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/miu/springdata1/service/impl/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
+    <list default="true" id="99bc903c-43a2-4d93-8ee3-e31d1dc4994c" name="Changes" comment="Init">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +65,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/Users/muhyieddin/MIU/CS545/2022/Exam/Apr23/Second Exam/exam-solution/spring-data",
+    "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "540c0285756fc9d033f091a60232dc85"
   },
   "keyToStringList": {
@@ -147,8 +120,16 @@
       <workItem from="1681583783731" duration="9344000" />
       <workItem from="1682060847722" duration="4608000" />
       <workItem from="1682108752816" duration="6864000" />
-      <workItem from="1682117203076" duration="649000" />
+      <workItem from="1682117203076" duration="2020000" />
     </task>
+    <task id="LOCAL-00001" summary="Init">
+      <created>1682118158610</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682118158610</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,5 +145,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init" />
   </component>
 </project>

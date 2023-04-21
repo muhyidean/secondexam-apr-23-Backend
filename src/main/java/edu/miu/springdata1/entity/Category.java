@@ -19,6 +19,7 @@ public class Category {
     private int id;
     private String name;
 
+
     @OneToMany()
     @JoinColumn(name = "category_id")
     @JsonBackReference

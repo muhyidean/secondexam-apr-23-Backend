@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BookCriteriaRequest {
 
+
     private String category;
     private String title;
     private Integer minPrice;

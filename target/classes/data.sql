@@ -7,6 +7,14 @@ INSERT INTO book (isbn, title, price, category_id) VALUES (112, 'Algo. Problem S
 INSERT INTO book (isbn, title, price, category_id) VALUES (113, 'How to be Happy', 60.0, 2);
 INSERT INTO book (isbn, title, price, category_id) VALUES (114, 'Basics of sketching', 15.0, 3);
 
+
+
+-- INSERT INTO address (id, city, country, state, zipcode) VALUES (1, 'Orlando','US','FL',32832);
+-- INSERT INTO address (id, city, country, state, zipcode) VALUES (2, 'Orlando','US','FL',32832);
+-- INSERT INTO address (id, city, country, state, zipcode) VALUES (3, 'Orlando','US','FL',32832);
+-- INSERT INTO address (id, city, country, state, zipcode) VALUES (4, 'Orlando','US','FL',32832);
+-- INSERT INTO address (id, city, country, state, zipcode) VALUES (5, 'Orlando','US','FL',32832);
+
 INSERT INTO author (id, name) VALUES (1,'Zaineh');
 INSERT INTO author (id, name) VALUES (2,'Yasmeen');
 INSERT INTO author (id, name) VALUES (3,'Mira');

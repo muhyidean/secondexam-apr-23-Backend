@@ -53,5 +53,6 @@ public class BookCriteriaSearch {
         TypedQuery<Book> query = em.createQuery(criteriaQuery);
         return query.getResultList();
     }
+
 }
 

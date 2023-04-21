@@ -16,7 +16,6 @@ import java.util.List;
 public class BookController {
 
     private final BookRepo bookService;
-
     public BookController(BookRepo bookService) {
         this.bookService = bookService;
     }
@@ -63,32 +62,6 @@ public class BookController {
     public List<Author> getAuthorsBook(@PathVariable int id) {
         return bookService.findById(id).get().getAuthors();
     }
-
-    // ALTERNATIVE ===========
-    @GetMapping("/filter/count-author/{num}")
-    public List<Book> findBookByAuthorCount(@PathVariable("num") int num) {
-        return bookService.getBooksByAuthorsEquals(num);
-    }
-
-
-//    @GetMapping("/filter/cat-country")
-//    public List<Book> getBooksCatAndCountry(
-//            @RequestParam(value = "country", required = false) String country,
-//            @RequestParam(value = "category", required = false) String category) {
-//
-//        return bookService.getBooksCatAndCountry(country, category);
-//    }
-
-//    // SERVICE LAYER =======================================
-//    var book = bookService.findBooksByCategory(category).stream()
-//            .flatMap(b -> b.getAuthors().stream())
-//            .filter(a -> a.getAddress().getCountry().equals(country))
-//            .limit(1)
-//            .map(a -> a.getBooks())
-//            .collect(Collectors.toList());
-
-
-
 
 
 }

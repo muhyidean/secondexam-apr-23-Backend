@@ -20,7 +20,7 @@ public class Category {
     private String name;
 
 
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id")
     @JsonBackReference
     List<Book> books;

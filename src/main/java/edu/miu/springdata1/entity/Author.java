@@ -17,7 +17,7 @@ public class Author {
     int id;
     String name;
 
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(cascade = CascadeType.ALL , mappedBy = "authors")
     @JsonBackReference
     List<Book> books;
 }
